@@ -1,0 +1,108 @@
+// Docker CE Install using Repository //
+
+Refer link ---> https://docs.docker.com/install/linux/docker-ce/ubuntu/ 
+
+If any Docker installed previosuly, remove them using below command
+
+$ sudo apt-get remove docker docker-engine docker.io containerd runc
+
+
+Docker CE Package ---> docker-ce
+
+We can install docker in many ways. one among them is setting up Docker's Repository and install Docker from them.
+
+Before installing Docker CE , need to setup Docekr Repo. Then install and update docekr from that repo.
+
+Setting up Repository:::
+
+ 1. Update apt package using sudo privileage.
+	$ sudo apt-get update
+
+ 2. Adding https certificate packages
+        $ sudo apt-get install \
+          apt-transport-https \
+          ca-certificates \
+          curl \
+          gnupg-agent \
+          software-properties-common	
+
+ 3. Add Docker's GPG Key
+
+ 	$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+ 
+Installing Docker CE from Docker Repository:::
+
+ 1. Update the apt package
+
+  	$ sudo apt-get update
+
+ 2. Install latest version of docker CE & containerd
+
+ 	$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+		OR
+	
+    Install Specific version of docker CE 
+
+     * Need to list the available versions in the repo and 
+
+     	$ apt-cache madison docker-ce
+
+	  docker-ce | 5:18.09.1~3-0~ubuntu-xenial | https://download.docker.com/linux/ubuntu  xenial/stable amd64 Packages
+	  docker-ce | 5:18.09.0~3-0~ubuntu-xenial | https://download.docker.com/linux/ubuntu  xenial/stable amd64 Packages
+	  docker-ce | 18.06.1~ce~3-0~ubuntu       | https://download.docker.com/linux/ubuntu  xenial/stable amd64 Packages
+	  docker-ce | 18.06.0~ce~3-0~ubuntu       | https://download.docker.com/linux/ubuntu  xenial/stable amd64 Packages
+	  ...
+
+     * Install Specific version using VERSION_STRING	
+
+     	$ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+
+
+ 3. Now, we can verify the docker installation by running hello-world image.
+
+ 	$ sudo docker run hello-world
+
+     This command will downlaod a test image and runs it in a container. When the container run, it will print info message and exits.
+
+     Now Docker CE is installed and running.
+
+Docker Group & Docker User :::
+
+ By Default Docker group will be created and no users will be added in it.
+
+ For running Docker commands, you need to use sudo command. For that we can create Docker user and add the docker user to Docker group.
+
+ Refer --->  https://docs.docker.com/install/linux/linux-postinstall/
+
+ 1.To check Docker Group existence
+ 	$ getent group docker
+
+ 2.If docker group not there , create the docker group using below command
+
+ 	$ sudo groupadd docker
+
+ 3. create the docker user
+
+ 	$ sudo useradd -Nm docker 
+		-N --> create docker user with no predefined group
+		 m --> create a home directory for the user
+
+ 4. you can check the created user
+ 	
+	$ getent passwd docker -->mostly "" docker:x:1003:1003::/home/docker:  ""
+
+ 5. Add the docker user to docker group
+
+	$ sudo usermod -aG docker docker(user)
+
+ 6. Now login as docker user
+
+ 	$ sudo su - docker
+ 
+ 7. Verify that you can run docker commands without sudo by running hello-world image to verify docker CE installation as docker user
+
+ 	$ docker run hello-world
+
+
