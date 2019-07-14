@@ -1,0 +1,31 @@
+
+
+Login as Docker user -->default path /home/docker
+vagrant@ubuntu-xenial:~$ sudo su - docker
+docker@ubuntu-xenial:~$ pwd
+/home/docker
+
+1.To list the containers
+
+    $ docker ps
+    
+   To list the images
+   
+    $ docker image ls
+    
+2. If any container is running, you can run a command in that running container
+
+    $ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+      See 'docker exec --help'.
+      
+      ex : $ docker exec -it relaxed_hodgkin /bin/bash --> this will create a bash session for the container
+           bash-4.4# ls -lart -->you can view the file system structure of the container
+           
+3. Jenkins workspace path
+
+    docker@ubuntu-xenial:/var/lib/jenkins/workspace$
+    
+  
+    
+
+           
