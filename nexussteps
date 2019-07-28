@@ -7,9 +7,9 @@ vagrant up
 vagrant ssh
 sudo apt-get update
 
-create user automation
+create user automation   -->sudo useradd automation
 
-sudo useradd automationid automation ---check the user details
+check the user details --> id automation 
 
 installing sona type nexus -- https://devopscube.com/how-to-install-latest-sonatype-nexus-3-on-linux/
 
