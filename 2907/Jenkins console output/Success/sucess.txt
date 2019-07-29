@@ -1,0 +1,89 @@
+
+Started by user Akshi2802
+Building on master in workspace /var/lib/jenkins/workspace/jenkins_maven_nexus
+using credential db700899-9a46-4e99-ae81-32ba00cc12ac
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:Akshi2802/devopsdemo.git # timeout=10
+Fetching upstream changes from git@github.com:Akshi2802/devopsdemo.git
+ > git --version # timeout=10
+using GIT_SSH to set credentials github 
+ > git fetch --tags --progress git@github.com:Akshi2802/devopsdemo.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 868db228ebc45f6d5a7bf420b2e265de5c77b716 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 868db228ebc45f6d5a7bf420b2e265de5c77b716
+Commit message: "updating repo id to vagrantnexus"
+ > git rev-list --no-walk 868db228ebc45f6d5a7bf420b2e265de5c77b716 # timeout=10
+Parsing POMs
+Established TCP socket on 40719
+[jenkins_maven_nexus] $ /opt/java//bin/java -cp /var/lib/jenkins/plugins/maven-plugin/WEB-INF/lib/maven35-agent-1.13.jar:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/boot/plexus-classworlds-2.6.0.jar:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/conf/logging jenkins.maven3.agent.Maven35Main /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1 /var/cache/jenkins/war/WEB-INF/lib/remoting-3.29.jar /var/lib/jenkins/plugins/maven-plugin/WEB-INF/lib/maven35-interceptor-1.13.jar /var/lib/jenkins/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.13.jar 40719
+<===[JENKINS REMOTING CAPACITY]===>channel started
+Executing Maven:  -B -f /var/lib/jenkins/workspace/jenkins_maven_nexus/pom.xml clean package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< org.webapp:javaone >-------------------------
+[INFO] Building javaone Maven Webapp 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ javaone ---
+[INFO] Deleting /var/lib/jenkins/workspace/jenkins_maven_nexus/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ javaone ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/jenkins_maven_nexus/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ javaone ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/jenkins_maven_nexus/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ javaone ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/jenkins_maven_nexus/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ javaone ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ javaone ---
+[INFO] No tests to run.
+[JENKINS] Recording test results
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ javaone ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [javaone] in [/var/lib/jenkins/workspace/jenkins_maven_nexus/target/javaone]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/var/lib/jenkins/workspace/jenkins_maven_nexus/src/main/webapp]
+[INFO] Webapp assembled in [56 msecs]
+[INFO] Building war: /var/lib/jenkins/workspace/jenkins_maven_nexus/target/javaone.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.062 s
+[INFO] Finished at: 2019-07-29T06:44:39Z
+[INFO] ------------------------------------------------------------------------
+Waiting for Jenkins to finish collecting data
+[JENKINS] Archiving /var/lib/jenkins/workspace/jenkins_maven_nexus/pom.xml to org.webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-SNAPSHOT.pom
+[JENKINS] Archiving /var/lib/jenkins/workspace/jenkins_maven_nexus/target/javaone.war to org.webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-SNAPSHOT.war
+channel stopped
+Successfully Uploaded Maven Assets
+Archiving artifacts
+Maven RedeployPublisher use remote  maven settings from : /var/lib/jenkins/.m2/settings.xml
+[INFO] Deployment in http://192.168.1.14:8083/repository/DevopsDemo-Snap/ (id=DevopsDemo-Snap,uniqueVersion=true)
+Deploying the main artifact javaone-0.0.1-SNAPSHOT.war
+Downloading from DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/maven-metadata.xml
+Downloaded from DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/maven-metadata.xml (767 B at 22 kB/s)
+Uploading to DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-20190729.064439-10.war
+Uploaded to DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-20190729.064439-10.war (3.6 kB at 14 kB/s)
+Uploading to DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-20190729.064439-10.pom
+Uploaded to DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-20190729.064439-10.pom (1.8 kB at 12 kB/s)
+Downloading from DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/maven-metadata.xml
+Downloaded from DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/maven-metadata.xml (334 B at 9.5 kB/s)
+Uploading to DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/maven-metadata.xml
+Uploaded to DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/maven-metadata.xml (770 B at 3.8 kB/s)
+Uploading to DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/maven-metadata.xml
+Uploaded to DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/maven-metadata.xml (313 B at 1.4 kB/s)
+[INFO] Deployment done in 0.99 sec
+Finished: SUCCESS

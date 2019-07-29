@@ -1,0 +1,119 @@
+Started by user Akshi2802
+Building on master in workspace /var/lib/jenkins/workspace/jenkins_maven_nexus
+using credential db700899-9a46-4e99-ae81-32ba00cc12ac
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:Akshi2802/devopsdemo.git # timeout=10
+Fetching upstream changes from git@github.com:Akshi2802/devopsdemo.git
+ > git --version # timeout=10
+using GIT_SSH to set credentials github 
+ > git fetch --tags --progress git@github.com:Akshi2802/devopsdemo.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 868db228ebc45f6d5a7bf420b2e265de5c77b716 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 868db228ebc45f6d5a7bf420b2e265de5c77b716
+Commit message: "updating repo id to vagrantnexus"
+ > git rev-list --no-walk 868db228ebc45f6d5a7bf420b2e265de5c77b716 # timeout=10
+Parsing POMs
+Established TCP socket on 35856
+[jenkins_maven_nexus] $ /opt/java//bin/java -cp /var/lib/jenkins/plugins/maven-plugin/WEB-INF/lib/maven35-agent-1.13.jar:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/boot/plexus-classworlds-2.6.0.jar:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/conf/logging jenkins.maven3.agent.Maven35Main /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1 /var/cache/jenkins/war/WEB-INF/lib/remoting-3.29.jar /var/lib/jenkins/plugins/maven-plugin/WEB-INF/lib/maven35-interceptor-1.13.jar /var/lib/jenkins/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.13.jar 35856
+<===[JENKINS REMOTING CAPACITY]===>channel started
+Executing Maven:  -B -f /var/lib/jenkins/workspace/jenkins_maven_nexus/pom.xml clean package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< org.webapp:javaone >-------------------------
+[INFO] Building javaone Maven Webapp 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ javaone ---
+[INFO] Deleting /var/lib/jenkins/workspace/jenkins_maven_nexus/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ javaone ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/jenkins_maven_nexus/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ javaone ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/jenkins_maven_nexus/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ javaone ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/jenkins_maven_nexus/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ javaone ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ javaone ---
+[INFO] No tests to run.
+[JENKINS] Recording test results
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ javaone ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [javaone] in [/var/lib/jenkins/workspace/jenkins_maven_nexus/target/javaone]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/var/lib/jenkins/workspace/jenkins_maven_nexus/src/main/webapp]
+[INFO] Webapp assembled in [34 msecs]
+[INFO] Building war: /var/lib/jenkins/workspace/jenkins_maven_nexus/target/javaone.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.034 s
+[INFO] Finished at: 2019-07-29T06:43:50Z
+[INFO] ------------------------------------------------------------------------
+Waiting for Jenkins to finish collecting data
+[JENKINS] Archiving /var/lib/jenkins/workspace/jenkins_maven_nexus/pom.xml to org.webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-SNAPSHOT.pom
+[JENKINS] Archiving /var/lib/jenkins/workspace/jenkins_maven_nexus/target/javaone.war to org.webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-SNAPSHOT.war
+channel stopped
+Successfully Uploaded Maven Assets
+Archiving artifacts
+Maven RedeployPublisher use remote  maven settings from : /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/conf/settings.xml
+[INFO] Deployment in http://192.168.1.14:8083/repository/DevopsDemo-Snap/ (id=DevopsDemo-Snap,uniqueVersion=true)
+Deploying the main artifact javaone-0.0.1-SNAPSHOT.war
+Downloading from DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/maven-metadata.xml
+Downloaded from DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/maven-metadata.xml (767 B at 20 kB/s)
+Uploading to DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-20190729.064350-10.war
+Uploading to DevopsDemo-Snap: http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-20190729.064350-10.pom
+ERROR: Failed to deploy artifacts: Could not transfer artifact org.webapp:javaone:war:0.0.1-20190729.064350-10 from/to DevopsDemo-Snap (http://192.168.1.14:8083/repository/DevopsDemo-Snap/): Failed to transfer file http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-20190729.064350-10.war with status code 401
+org.apache.maven.artifact.deployer.ArtifactDeploymentException: Failed to deploy artifacts: Could not transfer artifact org.webapp:javaone:war:0.0.1-20190729.064350-10 from/to DevopsDemo-Snap (http://192.168.1.14:8083/repository/DevopsDemo-Snap/): Failed to transfer file http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-20190729.064350-10.war with status code 401
+	at org.apache.maven.artifact.deployer.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:146)
+	at hudson.maven.reporters.MavenArtifactRecord.deploy(MavenArtifactRecord.java:198)
+	at hudson.maven.RedeployPublisher.perform(RedeployPublisher.java:176)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:744)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:690)
+	at hudson.maven.MavenModuleSetBuild$MavenModuleSetBuildExecution.post2(MavenModuleSetBuild.java:1074)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:635)
+	at hudson.model.Run.execute(Run.java:1841)
+	at hudson.maven.MavenModuleSetBuild.run(MavenModuleSetBuild.java:543)
+	at hudson.model.ResourceController.execute(ResourceController.java:97)
+	at hudson.model.Executor.run(Executor.java:429)
+Caused by: org.eclipse.aether.deployment.DeploymentException: Failed to deploy artifacts: Could not transfer artifact org.webapp:javaone:war:0.0.1-20190729.064350-10 from/to DevopsDemo-Snap (http://192.168.1.14:8083/repository/DevopsDemo-Snap/): Failed to transfer file http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-20190729.064350-10.war with status code 401
+	at org.eclipse.aether.internal.impl.DefaultDeployer.deploy(DefaultDeployer.java:295)
+	at org.eclipse.aether.internal.impl.DefaultDeployer.deploy(DefaultDeployer.java:223)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.deploy(DefaultRepositorySystem.java:384)
+	at org.apache.maven.artifact.deployer.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:142)
+	... 11 more
+Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.webapp:javaone:war:0.0.1-20190729.064350-10 from/to DevopsDemo-Snap (http://192.168.1.14:8083/repository/DevopsDemo-Snap/): Failed to transfer file http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-20190729.064350-10.war with status code 401
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:52)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:365)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.put(BasicRepositoryConnector.java:284)
+	at org.eclipse.aether.internal.impl.DefaultDeployer.deploy(DefaultDeployer.java:289)
+	... 14 more
+Caused by: org.apache.maven.wagon.TransferFailedException: Failed to transfer file http://192.168.1.14:8083/repository/DevopsDemo-Snap/org/webapp/javaone/0.0.1-SNAPSHOT/javaone-0.0.1-20190729.064350-10.war with status code 401
+	at org.apache.maven.wagon.shared.http.AbstractHttpClientWagon.put(AbstractHttpClientWagon.java:756)
+	at org.apache.maven.wagon.shared.http.AbstractHttpClientWagon.put(AbstractHttpClientWagon.java:670)
+	at org.apache.maven.wagon.shared.http.AbstractHttpClientWagon.put(AbstractHttpClientWagon.java:652)
+	at org.apache.maven.wagon.shared.http.AbstractHttpClientWagon.put(AbstractHttpClientWagon.java:646)
+	at org.apache.maven.wagon.shared.http.AbstractHttpClientWagon.put(AbstractHttpClientWagon.java:626)
+	at org.eclipse.aether.transport.wagon.WagonTransporter$PutTaskRunner.run(WagonTransporter.java:686)
+	at org.eclipse.aether.transport.wagon.WagonTransporter.execute(WagonTransporter.java:435)
+	at org.eclipse.aether.transport.wagon.WagonTransporter.put(WagonTransporter.java:418)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$PutTaskRunner.runTask(BasicRepositoryConnector.java:512)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:360)
+	... 16 more
+[INFO] Deployment failed after 0.16 sec
+Build step 'Deploy artifacts to Maven repository' changed build result to FAILURE
+Finished: FAILURE

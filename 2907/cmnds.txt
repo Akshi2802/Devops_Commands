@@ -1,0 +1,55 @@
+/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/bin/
+
+
+
+nexus
+
+[vagrant@devops-nexus-1 ~]$
+[vagrant@devops-nexus-1 ~]$ sudo su - nexus
+Last login: Mon Jul 29 03:50:16 UTC 2019 on pts/0
+[nexus@devops-nexus-1 ~]$ pwd
+/home/nexus
+[nexus@devops-nexus-1 ~]$ cd /app/nexus
+[nexus@devops-nexus-1 nexus]$ ./bin/nexus status
+nexus is running.
+[nexus@devops-nexus-1 nexus]$
+
+
+jenkins
+
+vagrant@ubuntu-xenial:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/conf$ sudo vim settings.xm
+l
+vagrant@ubuntu-xenial:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/conf$ rm settings.xml
+rm: remove write-protected regular file 'settings.xml'? y
+rm: cannot remove 'settings.xml': Permission denied
+vagrant@ubuntu-xenial:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/conf$ sudo rm settings.xml
+vagrant@ubuntu-xenial:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/conf$ ll
+total 28
+drwxr-xr-x 3 jenkins jenkins  4096 Jul 29 04:07 ./
+drwxr-xr-x 6 jenkins jenkins  4096 Jun  9 05:29 ../
+drwxr-xr-x 2 jenkins jenkins  4096 Jun  9 05:29 logging/
+-rwxr-xr-x 1 root    root    10211 Jul 28 07:01 settings.xml.bkp*
+-rwxr-xr-x 1 jenkins jenkins  3645 Apr  4 20:56 toolchains.xml*
+vagrant@ubuntu-xenial:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/conf$ sudo settings.xml
+sudo: settings.xml: command not found
+vagrant@ubuntu-xenial:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/conf$ sudo vim settings.xm
+l
+vagrant@ubuntu-xenial:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/conf$ ll
+total 32
+drwxr-xr-x 3 jenkins jenkins  4096 Jul 29 04:08 ./
+drwxr-xr-x 6 jenkins jenkins  4096 Jun  9 05:29 ../
+drwxr-xr-x 2 jenkins jenkins  4096 Jun  9 05:29 logging/
+-rw-r--r-- 1 root    root      438 Jul 29 04:08 settings.xml
+-rwxr-xr-x 1 root    root    10211 Jul 28 07:01 settings.xml.bkp*
+-rwxr-xr-x 1 jenkins jenkins  3645 Apr  4 20:56 toolchains.xml*
+vagrant@ubuntu-xenial:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.6.1/conf$
+
+settings.xml should be under.m2 directory.
+
+vagrant@ubuntu-xenial:/var/lib/jenkins/.m2$ ll
+total 16
+drwxr-xr-x  3 jenkins jenkins 4096 Jul 29 06:44 ./
+drwxr-xr-x 22 jenkins jenkins 4096 Jul 29 06:44 ../
+drwxr-xr-x 12 jenkins jenkins 4096 Jul 29 05:16 repository/
+-rw-r--r--  1 root    root     674 Jul 29 06:44 settings.xml
+
