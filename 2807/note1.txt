@@ -1,0 +1,16 @@
+https://help.sonatype.com/repomanager2/configuration/managing-repositories
+
+https://help.sonatype.com/repomanager2/installing-and-running/running
+
+https://help.sonatype.com/repomanager2/download
+
+https://help.sonatype.com/repomanager3/download
+
+
+https://gist.github.com/z3cka/7809939
+
+https://www.vagrantup.com/docs/virtualbox/configuration.html
+
+https://maven.apache.org/pom.html#Distribution_Management
+
+http://maven.apache.org/settings.html
